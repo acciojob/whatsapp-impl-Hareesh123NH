@@ -26,7 +26,7 @@ public class WhatsappRepository {
         this.customGroupCount = 0;
         this.messageId = 0;
     }
-    public String CreateUser(String name,String mobile) throws Exception{
+    public String createUser(String name,String mobile) throws Exception{
         if(userMobile.contains(mobile)){
             throw new Exception("User already exist");
         }

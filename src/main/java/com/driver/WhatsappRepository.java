@@ -1,6 +1,11 @@
 package com.driver;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -23,12 +28,12 @@ public class WhatsappRepository {
         this.senderMap = new HashMap<Message, User>();
         this.adminMap = new HashMap<Group, User>();
         this.userMobile = new HashSet<>();
-        this.customGroupCount = 0;
-        this.messageId = 0;
+        this.customGroupCount = 1;
+        this.messageId = 1;
     }
     public String createUser(String name,String mobile) throws Exception{
         if(userMobile.contains(mobile)){
-            throw new Exception("User already exist");
+            throw new Exception("User already exists");
         }
         userMobile.add(mobile);
         return "SUCCESS";
